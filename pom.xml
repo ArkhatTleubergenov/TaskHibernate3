@@ -58,6 +58,5 @@
 
 
         </dependencies>
-
-
-   </project>
+    <name>TaskJDBCHibernate</name>
+</project>

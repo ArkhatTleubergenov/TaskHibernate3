@@ -17,7 +17,6 @@ public class Util {
             try {
                 Configuration configuration = new Configuration();
 
-                // Hibernate settings equivalent to hibernate.cfg.xml's properties
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
                 settings.put(Environment.URL, "jdbc:mysql://localhost:3306/my_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false");
@@ -45,29 +44,4 @@ public class Util {
         }
         return sessionFactory;
     }
-    /*private static final SessionFactory concreteSessionFactory;
-    static {
-        try {
-            Properties prop = new Properties();
-            prop.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/my_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false");
-            prop.setProperty("hibernate.connection.username", "tleubergenov");
-            prop.setProperty("hibernate.connection.password", "Kazakhstan1!");
-            prop.setProperty("dialect", "org.hibernate.dialect.MySQLDialect");
-            //prop.setProperty("useSSL", "false");
-            prop.setProperty("hibernate.hbm2ddl.auto", "create");
-
-            concreteSessionFactory = new org.hibernate.cfg.Configuration()
-                    .addProperties(prop)
-
-                    .addAnnotatedClass(User.class)
-                    .buildSessionFactory()
-            ;
-        }
-        catch (Exception ex) {
-            throw new ExceptionInInitializerError(ex);
-        }
-    }
-    public static Session getSession() throws HibernateException {
-        return concreteSessionFactory.openSession();
-    }*/
 }

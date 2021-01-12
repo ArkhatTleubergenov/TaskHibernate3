@@ -1,14 +1,7 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import java.util.Arrays;
 import java.util.List;
