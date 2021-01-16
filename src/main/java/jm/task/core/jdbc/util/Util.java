@@ -11,7 +11,9 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 public class Util {
+
     private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -21,7 +23,7 @@ public class Util {
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
                 settings.put(Environment.URL, "jdbc:mysql://localhost:3306/my_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false");
                 settings.put(Environment.USER, "tleubergenov");
-                settings.put(Environment.PASS, "root");
+                settings.put(Environment.PASS, "Kazakhstan1!");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
                 settings.put(Environment.SHOW_SQL, "true");
@@ -29,7 +31,6 @@ public class Util {
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
                 //settings.put(Environment.HBM2DDL_AUTO, "create-drop");
-
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(User.class);

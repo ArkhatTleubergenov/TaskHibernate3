@@ -7,19 +7,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
         UserDaoHibernateImpl udhiHibernateDao = new UserDaoHibernateImpl();
 
         udhiHibernateDao.createUsersTable();// сделано
 
-        udhiHibernateDao.saveUser("Marie","Curie", (byte) 33);// сделано
-        udhiHibernateDao.saveUser("Pierre","Curie", (byte) 45);// сделано
-        udhiHibernateDao.saveUser("Isaav","Newton", (byte) 46);// сделано
-        udhiHibernateDao.saveUser("Erwin","Schr?dinger", (byte) 23);// сделано
+        udhiHibernateDao.saveUser("Marie", "Curie", (byte) 33);// сделано
+        udhiHibernateDao.saveUser("Pierre", "Curie", (byte) 45);// сделано
+        udhiHibernateDao.saveUser("Isaav", "Newton", (byte) 46);// сделано
+        udhiHibernateDao.saveUser("Erwin", "Schr?dinger", (byte) 23);// сделано
 
         udhiHibernateDao.removeUserById(5); // сделано
 
-        List<User> list = udhiHibernateDao .getAllUsers(); //сделано
+        List<User> list = udhiHibernateDao.getAllUsers(); //сделано
         System.out.println(Arrays.deepToString(list.toArray()));// печать всех users
 
         udhiHibernateDao.cleanUsersTable(); // сделано

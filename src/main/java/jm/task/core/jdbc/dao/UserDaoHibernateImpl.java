@@ -38,13 +38,6 @@ public class UserDaoHibernateImpl implements UserDao {
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            if (transaction != null) {
-                transaction.rollback();
-            }
         }
     }
 
@@ -65,13 +58,6 @@ public class UserDaoHibernateImpl implements UserDao {
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-            if (transaction != null) {
-                transaction.rollback();
-            }
         }
     }
 
@@ -90,16 +76,10 @@ public class UserDaoHibernateImpl implements UserDao {
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
+            transaction.rollback();
         } finally {
             if (session != null) {
                 session.close();
-            }
-            if (transaction.isActive()) {
-                try {
-                    transaction.rollback();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         }
 
@@ -121,16 +101,10 @@ public class UserDaoHibernateImpl implements UserDao {
             //session.close();
         } catch (Exception e) {
             e.printStackTrace();
+            transaction.rollback();
         } finally {
             if (session != null) {
                 session.close();
-            }
-            if (transaction.isActive()) {
-                try {
-                    transaction.rollback();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
@@ -154,13 +128,6 @@ public class UserDaoHibernateImpl implements UserDao {
             if (session != null) {
                 session.close();
             }
-            if (transaction.isActive()) {
-                try {
-                    transaction.rollback();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
         }
         return users;
     }
@@ -183,13 +150,6 @@ public class UserDaoHibernateImpl implements UserDao {
         } finally {
             if (session != null) {
                 session.close();
-            }
-            if (transaction.isActive()) {
-                try {
-                    transaction.rollback();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
